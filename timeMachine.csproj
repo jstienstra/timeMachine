@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFileLocations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFileLocations.Designer.cs">
+      <DependentUpon>frmFileLocations.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSummary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +71,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFileLocations.resx">
+      <DependentUpon>frmFileLocations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSummary.resx">
       <DependentUpon>frmSummary.cs</DependentUpon>
