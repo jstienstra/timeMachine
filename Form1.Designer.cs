@@ -44,6 +44,8 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addStaticReferenceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fileLocationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.restoreDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,8 +60,6 @@
             this.cboTaskList = new System.Windows.Forms.ComboBox();
             this.lblExtRefNum = new System.Windows.Forms.Label();
             this.txtExtRefNum = new System.Windows.Forms.TextBox();
-            this.restoreDefaultsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -191,6 +191,18 @@
             this.fileLocationsToolStripMenuItem.Text = "Import Task References";
             this.fileLocationsToolStripMenuItem.Click += new System.EventHandler(this.fileLocationsToolStripMenuItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
+            // 
+            // restoreDefaultsToolStripMenuItem
+            // 
+            this.restoreDefaultsToolStripMenuItem.Name = "restoreDefaultsToolStripMenuItem";
+            this.restoreDefaultsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.restoreDefaultsToolStripMenuItem.Text = "Restore Defaults";
+            this.restoreDefaultsToolStripMenuItem.Click += new System.EventHandler(this.restoreDefaultsToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -205,6 +217,7 @@
             this.docsToolStripMenuItem.Name = "docsToolStripMenuItem";
             this.docsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.docsToolStripMenuItem.Text = "Docs";
+            this.docsToolStripMenuItem.Click += new System.EventHandler(this.docsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -316,18 +329,6 @@
             this.txtExtRefNum.Name = "txtExtRefNum";
             this.txtExtRefNum.Size = new System.Drawing.Size(278, 26);
             this.txtExtRefNum.TabIndex = 17;
-            // 
-            // restoreDefaultsToolStripMenuItem
-            // 
-            this.restoreDefaultsToolStripMenuItem.Name = "restoreDefaultsToolStripMenuItem";
-            this.restoreDefaultsToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.restoreDefaultsToolStripMenuItem.Text = "Restore Defaults";
-            this.restoreDefaultsToolStripMenuItem.Click += new System.EventHandler(this.restoreDefaultsToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(193, 6);
             // 
             // frmTimeMachine
             // 
