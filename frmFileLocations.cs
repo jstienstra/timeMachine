@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Xml;
 using System.IO;
 using System.Data.OleDb;
+using System.Xml.Linq;
 
 namespace timeMachine
 {
@@ -52,10 +53,118 @@ namespace timeMachine
 
 
             //Here we need to update the /timeMachine/progFiles/progFile node in XML with the user selected file and path
+            //set constants and filename vars
+            string lsFileLocationsXML = AppDomain.CurrentDomain.BaseDirectory + "fileLocations.xml";
+
+            //Set ext ref file
+            string lsDirExtRefFile = loadProgFileXML("External Reference Files", lsFileLocationsXML);
+
+            setExtRefLocation(lsFileLocationsXML);
+
+
+
+        }
+
+        private void setExtRefLocation(string rsXMLFile)
+        {
+
+
+
+            if (File.Exists(rsXMLFile))
+            {
+
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load(rsXMLFile);
+
+
+                XmlElement xelRoot = doc.DocumentElement;
+                XmlNodeList xnlNodes = xelRoot.SelectNodes("/timeMachine/progFiles/progFile");
+
+                //First, create file structure
+                //foreach (XmlNode xndNode in xnlNodes)
+                //{
+                //    //string lsRefNum = xndNode["locName"].InnerText;
+                //    string lsLocPath = xndNode["locPath"].InnerText;
+
+                //    //First is a main prog dir. perhaps c:\TimeMachine\
+                //    Directory.CreateDirectory(lsLocPath);
+
+                //}
+
+
+                //Then, find file/location based on param
+                //Need to handle initial call for creating file structure...?
+                foreach (XmlNode xndNode in xnlNodes)
+                {
+                    //XDocument doc = XDocument.Load(rsXMLLocations);
+                    //XElement value = doc.Root.Descendants("value").SingleOrDefault();
+                    string rsLocName = "External Reference Files";
+                    string lsLocName = xndNode["locName"].InnerText;
+                    string lsLocPath = xndNode["locPath"].InnerText;
+                    string lsNewLoc = txtExtRefFile.Text;
+
+                    if (lsLocName == rsLocName)
+                    {
+
+                        //return lsLocPath;
+                        //Replace the text
+                        //xndNode["locPath"].InnerText.Replace(lsLocPath, lsNewLoc);
+                        xndNode["locPath"].InnerText = lsNewLoc;
+
+                    }
+                    else
+                    {
+                        //return "";
+                        continue;
+                    }
+
+                    
+
+                    //xndNode.ReplaceWith(new XElement("value", "newValue"));
+
+                    //doc.Save(rsXMLLocations);
+
+                    //First is a main prog dir. perhaps c:\TimeMachine\
+                    //Directory.CreateDirectory(lsLocPath);
+
+                }
+
+                doc.Save(rsXMLFile);
+
+                //Not sure if we will ever get here. Perhaps, If the file does not have any nodes.
+                //return "";
+
+
+                //Set picklist default
+                //cboTaskList.SelectedIndex = 0;
+
+            }
+
+            else
+            {
+                //createXML();
+
+                //File should already exist at this point... Throw Error if not found.
+                //OR create a new default XML...???
+
+                //for now, just have a message prompt and return blank.
+                MessageBox.Show("Ye location map be missin'.", "Yaarrrrr...");
+
+            }
 
 
 
 
+
+
+            //XDocument doc = XDocument.Load(rsXMLLocations);
+            //XElement value = doc.Root.Descendants("value").SingleOrDefault();
+
+            //value.ReplaceWith(new XElement("value", "newValue"));
+
+            //doc.Save(rsXMLLocations);
+        
         }
 
 
