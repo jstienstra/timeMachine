@@ -49,11 +49,11 @@
   <ItemGroup>
     <Compile Include="clsConfigs.cs" />
     <Compile Include="clsReporting.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmTimeMachine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmTimeMachine.Designer.cs">
+      <DependentUpon>frmTimeMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFileLocations.cs">
       <SubType>Form</SubType>
@@ -75,8 +75,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmTimeMachine.resx">
+      <DependentUpon>frmTimeMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFileLocations.resx">
       <DependentUpon>frmFileLocations.cs</DependentUpon>
